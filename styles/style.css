@@ -355,7 +355,7 @@ a:hover {
   font-size: var(--title-font-size);
   line-height: 82.5%;
   font-weight: 700;
-  text-shadow: 4px 4px 0 rgba(255, 0, 112, 1);
+  text-shadow: 2px 2px 0 var(--shadow-text-color);
   text-align: center;
   align-items: center;
   margin-bottom: 20px;
@@ -441,10 +441,6 @@ a:hover {
   .footer {
     height: 1024px;
   }
-
-  .footer-title {
-    font-size: 6rem;
-  }
 }
 
 @media (max-width: 375px) {
@@ -470,6 +466,10 @@ a:hover {
   .header__theme-menu-list {
     display: grid;
     row-gap: 10px;
+  }
+
+  .main {
+    margin: 0;
   }
 
   .main-title {
@@ -517,6 +517,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    margin: 50px 0px;
   }
 
   .third_section-topic {
@@ -553,12 +554,17 @@ a:hover {
     grid-row: 6;
   }
 
+  .main-galery {
+    gap: 10px;
+  }
+
   .galery {
     max-width: 1024px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 10px;
+    margin-bottom: 40px;
   }
 
   .galery_img-sunset {
@@ -573,12 +579,12 @@ a:hover {
 
   .galery_img-books {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 4;
   }
 
   .galery_img-tape {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 3;
   }
 
   .galery_img-street {
