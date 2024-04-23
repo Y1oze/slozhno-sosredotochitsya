@@ -1,16 +1,5 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-:root {
-  --accent-color: #000028;
-  --bg-image: url("../images/cover-image-dark.png");
-  --bg-color: #000028;
-  --font-family: "IBM Plex mono";
-  --main-title-color: #db00ff;
-  --h2-text-color: #000028;
-  --h3-text-color: #ff0070;
-  --main-text-color: #f1b2ce;
-}
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   max-width: 1024px;
@@ -34,7 +23,83 @@
   min-height: 768px;
   max-height: 100vh;
   width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    bottom: 20px;
+    left: 0px;
+    border: 1px solid var(--rec-color);
+    border-top: none;
+    border-right: none;
 }
+}
+
+.rec{
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: var(--font-size);
+  color: var(--rec-color);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0px;
+    right: -27px;
+    border: 1px solid var(--rec-color);
+    border-bottom: none;
+    border-left: none;
+}
+
+  &::after {
+      content: '';
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--rec-color);
+      top: 8px;
+      right: -18px;
+      box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+
+  }
+
+}
+
+
+a {
+  text-shadow: 2.5px 2.5px 0 var(--shadow-text-color);
+  text-decoration: none;  
+}
+
+a:focus{
+  outline: 1px solid  var(--main-text-color);
+
+}
+
+a:hover{
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.header__theme-menu-button_active  {
+  outline: 1px solid var(--buton-text-color) ;
+
+}
+
+.header__theme-menu-button:focus {
+border-bottom: 1px solid var(--buton-text-color) ;
+
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid  var(--color-hover);
+  
+  }
 
 .header__theme-menu {
   display: grid;
@@ -47,14 +112,12 @@
 .main-title {
   color: var(--main-title-color);
   font-family: var(--font-family);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: var(--title-font-size);
   line-height: 82.5%;
   font-weight: 700;
   text-shadow: 4px 4px 0 rgba(255, 0, 112, 1);
-  overflow: visible;
   text-align: left;
-  margin-left: -10px;
-
+  margin-left: -20px;
   transition: color 0.7s ease-in-out;
 }
 
@@ -66,32 +129,31 @@
 .header__theme-menu-button {
   width: 70px;
   height: 26px;
-  color: var(--h3-text-color);
+  color: var(--buton-text-color);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size);
   line-height: 18px;
   background: transparent;
   border: 0;
 }
 
 .header-subtitle {
-  display: inline-block;
-  position: relative;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
   font-weight: 700;
   line-height: 23.4px;
-  background-color: var(--h3-text-color);
+  background-color: var(--bg-text-color);
   color: var(--h2-text-color);
   width: 491px;
   height: 71px;
   justify-self: flex-end;
+  margin-bottom: 17px;
 }
 
 .main {
   margin-top: 60px;
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-size);
 }
 
 .first-section {
@@ -101,24 +163,22 @@
   gap: 20px;
 }
 
-/* одинаковые свойства у двух селекторов */
-
 .section-topic {
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-size);
   color: var(--h3-text-color);
 }
 
 .subsection-topic {
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-size);
   color: var(--h2-text-color);
-  background-color: var(--h3-text-color);
+  background-color: var(--bg-text-color);
   margin-bottom: 10px;
 }
 
 .subsection-content {
-  font-size: 18px;
+  font-size: var(--font-size);
   font-weight: 400;
   line-height: 23.4px;
   text-align: left;
@@ -136,7 +196,7 @@
 
 .second_section-topic {
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-size);
   color: var(--h3-text-color);
   grid-column: 1;
   grid-row: 1;
@@ -165,16 +225,25 @@
 
 .third_section-topic {
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-size);
   color: var(--h3-text-color);
 }
 
 .third_subsection-subtopic {
   height: 23px;
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-size);
   color: var(--h2-text-color);
-  background-color: var(--h3-text-color);
+  background-color: var(--bg-text-color);
+}
+
+.third-subsection-topic {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--h2-text-color);
+  background-color: var(--bg-text-color);
+  margin-bottom: 10px;
+  font-weight: 400;
 }
 
 .third-section_first-content {
@@ -205,7 +274,6 @@
 }
 
 .main-galery {
-  margin: auto;
   display: grid;
   row-gap: 20px;
 }
@@ -216,6 +284,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-bottom: 60px;
+}
+
+.galery_subsection-topic {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--h2-text-color);
+  background-color: var(--bg-text-color);
 }
 
 .galery-card {
@@ -250,25 +326,54 @@
 }
 
 .footer {
+  position: relative;
   display: grid;
   height: 768px;
   align-items: center;
+
+&::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 20px;
+  left: 0px;
+  border: 1px solid var(--rec-color);
+  border-top: none;
+  border-right: none;
 }
+
+&::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 0px;
+  border: 1px solid var(--rec-color);
+  border-bottom: none;
+  border-left: none;
+}
+}
+
+
 
 .footer-title {
   color: var(--main-title-color);
   font-family: var(--font-family);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: var(--title-font-size);
   line-height: 82.5%;
   font-weight: 700;
   text-shadow: 4px 4px 0 rgba(255, 0, 112, 1);
-  overflow: visible;
-  padding: 0;
   text-align: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-/* Медиа-запросы для адаптации под 768x1024 */
+.footer-title_contain {
+  display: grid;
+}
+
 @media (max-width: 768px) {
   .page {
     max-width: 768px;
@@ -408,10 +513,10 @@
     grid-template-rows: auto;
   }
 
-.second_section-topic {
-  width: 100%;
-  min-height: 47px;
-}
+  .second_section-topic {
+    width: 100%;
+    min-height: 47px;
+  }
 
   .third-section {
     display: grid;
@@ -432,22 +537,22 @@
     grid-column: 1;
     row-gap: 20px;
   }
-  
+
   .third-section_second-content {
     grid-column: 1;
     grid-row: 3;
   }
-  
+
   .third-section_third-content {
     grid-column: 1;
     grid-row: 4;
   }
-  
+
   .third-section_fourth-content {
     grid-column: 1;
     grid-row: 5;
   }
-  
+
   .third-section_fifth-content {
     grid-column: 1;
     grid-row: 6;
@@ -462,25 +567,25 @@
   }
 
   .galery_img-sunset {
-    grid-column: 1 ;
+    grid-column: 1;
     grid-row: 1;
   }
-  
+
   .galery_img-ice-cream {
     grid-column: 1;
     grid-row: 2;
   }
-  
+
   .galery_img-books {
     grid-column: 1;
     grid-row: 3;
   }
-  
+
   .galery_img-tape {
     grid-column: 1;
     grid-row: 4;
   }
-  
+
   .galery_img-street {
     grid-column: 1;
     grid-row: 5;
@@ -490,7 +595,4 @@
     height: 668px;
   }
 
-  .footer-title {
-    font-size: 6rem;
-  }
 }

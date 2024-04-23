@@ -5,14 +5,18 @@
 */
 
 :root {
-  --accent-color: #000028;
-  --bg-image: url("../images/cover-image-light.png");
-  --bg-color: #000028;
-  --font-family: "IBM Plex mono";
+  --accent-color: #ff8dcb;
+  --bg-color: #FFF1F7;
   --main-title-color: #FFC2E6;
-  --h2-text-color: #000028;
-  --h3-text-color: #FF8DCB;
   --main-text-color: #353430;
+  --h3-text-color: #353430;
+  --h2-text-color: #353430;
+  --buton-text-color: #353430;
+  --shadow-text-color: #ff8dcb;
+  --bg-text-color: #ff8dcb;
+  --color-hover: rgba(50, 49, 45, 0.4);
+
+  --bg-image: url("../images/cover-image-light.png");
 }
 
 .page.theme_light {
@@ -20,12 +24,24 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --bg-image: url("../images/cover-image-light.png");
-  --accent-color: #000028;
-  --bg-color: #000028;
-  --font-family: "IBM Plex mono";
+  --accent-color: #ff8dcb;
+  --bg-color: #FFF1F7;
   --main-title-color: #FFC2E6;
-  --h2-text-color: #000028;
-  --h3-text-color: #FF8DCB;
   --main-text-color: #353430;
+  --h3-text-color: #353430;
+  --h2-text-color: #353430;
+  --buton-text-color: #353430;
+  --shadow-text-color: #ff8dcb;
+  --bg-text-color: #ff8dcb;
+  --color-hover: rgba(50, 49, 45, 0.4);
+
+  --bg-image: url("../images/cover-image-light.png");
+
+  --font-family: "IBM Plex mono", Courier, monospace;
+  --font-size: 18px;
+  --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
+
+.rec, ::before, ::after {
+  display: none;
 }
