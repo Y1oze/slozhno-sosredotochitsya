@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   font-family: var(--font-family);
   color: var(--main-text-color);
-  padding: 0px 20px;
+  padding: 20px 20px;
 }
 
 .header {
@@ -20,7 +20,7 @@
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
   position: relative;
-  min-height: 768px;
+  min-height: 748px;
   max-height: 100vh;
   width: 100%;
 
@@ -41,7 +41,7 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    top: 10px;
+    top: 0px;
     right: 0px;
     border: 1px solid var(--rec-color);
     border-bottom: none;
@@ -50,8 +50,9 @@
 }
 
 .rec {
+  display: block;
   position: absolute;
-  top: 20px;
+  top: 0px;
   right: 28px;
   font-size: var(--font-size);
   color: var(--rec-color);
@@ -64,7 +65,7 @@
     border-radius: 50%;
     background-color: var(--rec-color);
     top: 8px;
-    right: -18px;
+    right: -20px;
     box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
   }
 }
@@ -82,16 +83,28 @@ a:hover {
   border-bottom: 1px solid var(--main-text-color);
 }
 
-.header__theme-menu-button_active {
-  outline: 1px solid var(--buton-text-color);
+:focus {
+  outline: none;
 }
 
-.header__theme-menu-button:focus {
+:focus-visible {
+  outline: none;
+}
+
+.header__theme-menu-button_active,
+.header__theme-menu-button_active:hover,
+.header__theme-menu-button_active:focus-visible {
+  outline: 1px solid var(--buton-text-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--buton-text-color);
 }
 
 .header__theme-menu-button:hover {
   outline: 1px solid var(--color-hover);
+  cursor: pointer;
 }
 
 .header__theme-menu {
@@ -99,7 +112,6 @@ a:hover {
   align-self: flex-start;
   justify-items: center;
   position: relative;
-  padding-top: 20px;
 }
 
 .main-title {
@@ -111,6 +123,7 @@ a:hover {
   text-shadow: 4px 4px 0 var(--shadow-text-color);
   text-align: left;
   margin-left: -20px;
+  margin-bottom: 14px;
   transition: color 0.7s ease-in-out;
 }
 
@@ -140,7 +153,7 @@ a:hover {
   width: 491px;
   min-height: 71px;
   justify-self: flex-end;
-  margin-bottom: 17px;
+  margin-bottom: 29px;
 }
 
 .main {
@@ -177,7 +190,7 @@ a:hover {
   text-align: left;
 }
 
-.first-section_second-content {
+.first-section_content {
   grid-column: 2/3;
 }
 
@@ -195,17 +208,7 @@ a:hover {
   grid-row: 1;
 }
 
-.second-section_first-content {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.second-section_second-content {
-  grid-column: 2;
-  grid-row: 2;
-}
-.second-section_third-content {
-  grid-column: 3;
+.second-section_content {
   grid-row: 2;
 }
 
@@ -228,6 +231,7 @@ a:hover {
   font-size: var(--font-size);
   color: var(--h2-text-color);
   background-color: var(--bg-text-color);
+  margin-bottom: 20px;
 }
 
 .third-subsection-topic {
@@ -239,31 +243,9 @@ a:hover {
   font-weight: 400;
 }
 
-.third-section_first-content {
+.third-section_content {
   display: grid;
-  grid-row: 1;
   grid-column: 2;
-  row-gap: 20px;
-}
-
-.third-section_second-content {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.third-section_third-content {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.third-section_fourth-content {
-  grid-column: 2;
-  grid-row: 4;
-}
-
-.third-section_fifth-content {
-  grid-column: 2;
-  grid-row: 5;
 }
 
 .main-galery {
@@ -321,7 +303,7 @@ a:hover {
 .footer {
   position: relative;
   display: grid;
-  height: 768px;
+  min-height: 748px;
   align-items: center;
 
   &::before {
@@ -341,7 +323,7 @@ a:hover {
     position: absolute;
     width: 25px;
     height: 25px;
-    top: 20px;
+    top: 0px;
     right: 0px;
     border: 1px solid var(--rec-color);
     border-bottom: none;
@@ -368,12 +350,11 @@ a:hover {
 @media (max-width: 768px) {
   .page {
     max-width: 768px;
-    padding: 0px 20px;
+    padding: 20px 20px;
   }
 
   .header {
-    min-height: 1024px;
-    max-height: 100vh;
+    min-height: 1004px;
     grid-template-rows: 1fr min-content 1fr;
   }
 
@@ -381,7 +362,6 @@ a:hover {
     display: grid;
     align-self: center;
     justify-items: flex-end;
-    padding: 0;
   }
 
   .header__theme-menu-list {
@@ -392,6 +372,7 @@ a:hover {
   .header-subtitle {
     width: 364px;
     height: 117px;
+    margin-bottom: 40px;
   }
 
   .first-section {
@@ -415,22 +396,13 @@ a:hover {
   }
 
   .second_section-topic {
-    width: 33%;
+    width: 32%;
     min-height: 70px;
   }
 
-  .second-section_first-content {
+  .second-section_content {
     grid-column: 1;
-    grid-row: 2;
-  }
-
-  .second-section_second-content {
-    grid-column: 1;
-    grid-row: 3;
-  }
-  .second-section_third-content {
-    grid-column: 1;
-    grid-row: 4;
+    grid-row: auto;
   }
 
   .third-section {
@@ -439,28 +411,36 @@ a:hover {
   }
 
   .footer {
-    height: 1024px;
+    min-height: 1004px;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 462px) {
   .page {
-    max-width: 375px;
-    padding: 0px 10px;
+    min-width: 375px;
+    padding: 10px 10px;
   }
 
   .header {
-    min-height: 668px;
-    max-height: 100vh;
+    min-height: 658px;
     grid-template-rows: 1fr min-content 1fr;
     margin-bottom: 40px;
+
+    &::before {
+      bottom: 10px;
+    }
+  }
+
+  .main-title {
+    font-size: 116px;
+  }
+
+  .header-subtitle {
+    margin-bottom: 10px;
   }
 
   .header__theme-menu {
-    display: grid;
-    align-self: center;
-    justify-items: flex-end;
-    padding: 0;
+    padding-bottom: 10px;
   }
 
   .header__theme-menu-list {
@@ -489,7 +469,7 @@ a:hover {
     row-gap: 20px;
   }
 
-  .first-section_second-content {
+  .first-section_content {
     grid-column: 1;
   }
 
@@ -527,31 +507,8 @@ a:hover {
     grid-row: 1;
   }
 
-  .third-section_first-content {
-    display: grid;
-    grid-row: 2;
+  .third-section_content {
     grid-column: 1;
-    row-gap: 20px;
-  }
-
-  .third-section_second-content {
-    grid-column: 1;
-    grid-row: 3;
-  }
-
-  .third-section_third-content {
-    grid-column: 1;
-    grid-row: 4;
-  }
-
-  .third-section_fourth-content {
-    grid-column: 1;
-    grid-row: 5;
-  }
-
-  .third-section_fifth-content {
-    grid-column: 1;
-    grid-row: 6;
   }
 
   .main-galery {
@@ -559,7 +516,7 @@ a:hover {
   }
 
   .galery {
-    max-width: 1024px;
+    max-width: 355px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -592,7 +549,23 @@ a:hover {
     grid-row: 5;
   }
 
+  .footer-title {
+    font-size: 116px;
+  }
+
   .footer {
-    height: 668px;
+    min-height: 658px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      bottom: 0px;
+      left: 0px;
+      border: 1px solid var(--rec-color);
+      border-top: none;
+      border-right: none;
+    }
   }
 }

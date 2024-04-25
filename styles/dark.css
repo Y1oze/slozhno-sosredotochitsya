@@ -4,22 +4,6 @@
   переключая тему
 */
 
-:root {
-  --accent-color: #ff0070;
-  --bg-color: #000028;
-  --main-title-color: #db00ff;
-  --main-text-color: #f1b2ce;
-  --h3-text-color: #ff0070;
-  --h2-text-color: #000028;
-  --buton-text-color: #ff0070;
-  --shadow-text-color: #ff0070;
-  --bg-text-color: #ff0070;
-  --rec-color: #ff0070;
-  --color-hover: rgba(255, 0, 112, 0.4);
-
-  --bg-image: url("../images/cover-image-dark.png");
-}
-
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
