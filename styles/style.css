@@ -304,6 +304,7 @@ a:hover {
   position: relative;
   display: grid;
   min-height: 748px;
+  max-height: 100vh;
   align-items: center;
 
   &::before {
@@ -349,7 +350,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .page {
-    max-width: 768px;
+    min-width: 768px;
     padding: 20px 20px;
   }
 
