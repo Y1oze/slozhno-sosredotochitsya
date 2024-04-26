@@ -20,6 +20,7 @@
   --bg-text-color: #ff8dcb;
   --color-hover: rgba(50, 49, 45, 0.4);
   --bg-image: url("../images/cover-image-light.png");
+  --rec-color: #353430;
 }
 
 .page.theme_light .rec {
