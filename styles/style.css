@@ -356,7 +356,6 @@ a:hover {
 
   .header {
     min-height: 1004px;
-    grid-template-rows: 1fr min-content 1fr;
   }
 
   .header__theme-menu {
@@ -416,7 +415,7 @@ a:hover {
   }
 }
 
-@media (max-width: 462px) {
+@media (max-width: 375px) {
   .page {
     min-width: 375px;
     padding: 10px 10px;
@@ -424,7 +423,6 @@ a:hover {
 
   .header {
     min-height: 658px;
-    grid-template-rows: 1fr min-content 1fr;
     margin-bottom: 40px;
 
     &::before {
@@ -512,11 +510,15 @@ a:hover {
 
   .galery {
     max-width: 355px;
-    margin: auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-rows: min-content;
+    row-gap: 5px;
     margin-bottom: 40px;
+  }
+
+  .galery_img {
+    height: calc(100% - 5px);
   }
 
   .galery_img-sunset {
@@ -546,6 +548,7 @@ a:hover {
 
   .footer-title {
     font-size: 116px;
+    margin-bottom: 10px;
   }
 
   .footer {
@@ -556,7 +559,7 @@ a:hover {
       position: absolute;
       width: 25px;
       height: 25px;
-      bottom: 0px;
+      bottom: 5px;
       left: 0px;
       border: 1px solid var(--rec-color);
       border-top: none;
